@@ -73,62 +73,79 @@ export default function Navbar() {
           isScrolled 
             ? 'bg-background/80 backdrop-blur-md border border-border/50 shadow-lg' 
             : 'bg-transparent'
-        } rounded-full px-3 sm:px-4 md:px-6 py-3 w-[95%] max-w-5xl`}
+        } rounded-full w-[95%] max-w-6xl`}
       >
-        <div className="flex items-center justify-between">
-          {/* Logo - Centered on mobile, left on desktop */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-lg sm:text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent flex-shrink-0"
-          >
-            Portfolio
-          </motion.div>
+        <div className="px-4 sm:px-6 py-3">
+          {/* Mobile Layout (< 768px) */}
+          <div className="flex md:hidden items-center justify-between">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="text-lg font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+            >
+              Portfolio
+            </motion.div>
+            
+            <div className="flex items-center space-x-2">
+              <motion.button
+                onClick={cycleTheme}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="p-2 rounded-full bg-secondary hover:bg-accent transition-colors duration-200"
+                title={`Current theme: ${theme}`}
+              >
+                {theme === 'light' ? (
+                  <Sun className="w-4 h-4" />
+                ) : theme === 'navy' ? (
+                  <Palette className="w-4 h-4" />
+                ) : (
+                  <Moon className="w-4 h-4" />
+                )}
+              </motion.button>
 
-          {/* Desktop Navigation - Hidden on mobile */}
-          <div className="hidden lg:flex items-center justify-center flex-1 px-8">
-            <div className="flex items-center space-x-6">
-              {navItems.map((item) => (
-                <motion.button
-                  key={item.href}
-                  onClick={() => scrollToSection(item.href)}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
-                    activeSection === item.href
-                      ? 'text-primary'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  {item.label}
-                </motion.button>
-              ))}
+              <motion.button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="p-2 rounded-full bg-secondary hover:bg-accent transition-colors duration-200"
+              >
+                {isMobileMenuOpen ? (
+                  <X className="w-4 h-4" />
+                ) : (
+                  <Menu className="w-4 h-4" />
+                )}
+              </motion.button>
             </div>
           </div>
 
-          {/* Tablet Navigation - Hidden on mobile and desktop */}
-          <div className="hidden md:flex lg:hidden items-center justify-center flex-1 px-4">
-            <div className="flex items-center space-x-4">
-              {navItems.map((item) => (
-                <motion.button
-                  key={item.href}
-                  onClick={() => scrollToSection(item.href)}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`text-xs font-medium transition-colors duration-200 whitespace-nowrap ${
-                    activeSection === item.href
-                      ? 'text-primary'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  {item.label}
-                </motion.button>
-              ))}
+          {/* Tablet Layout (768px - 1024px) */}
+          <div className="hidden md:flex lg:hidden items-center justify-between">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="text-lg font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+            >
+              Portfolio
+            </motion.div>
+            
+            <div className="flex items-center justify-center flex-1 px-6">
+              <div className="flex items-center space-x-3">
+                {navItems.map((item) => (
+                  <motion.button
+                    key={item.href}
+                    onClick={() => scrollToSection(item.href)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`text-xs font-medium transition-colors duration-200 px-2 py-1 rounded-md ${
+                      activeSection === item.href
+                        ? 'text-primary bg-primary/10'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
+                    }`}
+                  >
+                    {item.label}
+                  </motion.button>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Right side controls */}
-          <div className="flex items-center space-x-2 flex-shrink-0">
-            {/* Theme Toggle */}
             <motion.button
               onClick={cycleTheme}
               whileHover={{ scale: 1.1 }}
@@ -144,18 +161,50 @@ export default function Navbar() {
                 <Moon className="w-4 h-4" />
               )}
             </motion.button>
+          </div>
 
-            {/* Mobile Menu Button */}
+          {/* Desktop Layout (>= 1024px) */}
+          <div className="hidden lg:flex items-center justify-between">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+            >
+              Portfolio
+            </motion.div>
+            
+            <div className="flex items-center justify-center flex-1 px-8">
+              <div className="flex items-center space-x-6">
+                {navItems.map((item) => (
+                  <motion.button
+                    key={item.href}
+                    onClick={() => scrollToSection(item.href)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`text-sm font-medium transition-colors duration-200 px-3 py-2 rounded-lg ${
+                      activeSection === item.href
+                        ? 'text-primary bg-primary/10 border border-primary/20'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
+                    }`}
+                  >
+                    {item.label}
+                  </motion.button>
+                ))}
+              </div>
+            </div>
+
             <motion.button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={cycleTheme}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="md:hidden p-2 rounded-full bg-secondary hover:bg-accent transition-colors duration-200"
+              className="p-2 rounded-full bg-secondary hover:bg-accent transition-colors duration-200"
+              title={`Current theme: ${theme}`}
             >
-              {isMobileMenuOpen ? (
-                <X className="w-4 h-4" />
+              {theme === 'light' ? (
+                <Sun className="w-5 h-5" />
+              ) : theme === 'navy' ? (
+                <Palette className="w-5 h-5" />
               ) : (
-                <Menu className="w-4 h-4" />
+                <Moon className="w-5 h-5" />
               )}
             </motion.button>
           </div>
