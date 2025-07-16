@@ -12,28 +12,53 @@ export default function Projects() {
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.',
-      image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/example'
+      title: 'AI Powered Novel Summarizer || Textbook-Like Dictionary',
+      description: 'A full-stack AI powered webapp which helps student summarize novels just by inputing the novel name and author to the AI and it does the rest',
+      image: '/screenshot.png',
+      technologies: ['Next.js', 'Node.js', 'Supabase', 'Firebase', 'HuggingFace API'],
+      liveUrl: 'https://bhs24hub.vercel.app',
+      githubUrl: 'https://github.com/krisdikachi/bhs24hub'
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg',
-      technologies: ['Next.js', 'TypeScript', 'Socket.io', 'MongoDB'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/example'
+      title: 'Web Management WebApp',
+      description: 'An Event management site used t create, manage and even share digital tickets used for checking in ',
+      image: '/planceer2.png',
+      technologies: ['Next.js', 'TypeScript', 'Supabase', 'Shadcnui', 'API', 'Node.js'],
+      liveUrl: 'https://plancer.site',
+      githubUrl: 'https://github.com/krisdikachi/plancer'
     },
     {
-      title: 'AI-Powered Analytics Dashboard',
-      description: 'An analytics dashboard with AI-powered insights, real-time data visualization, and predictive analytics for business intelligence.',
-      image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg',
-      technologies: ['Vue.js', 'Python', 'TensorFlow', 'D3.js'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/example'
+      title: 'Electric Vehicle Station Locator',
+      description: 'A webapp used to locate a nearby ev station chrager basd on user location ',
+      image: '/avt logo.PNG',
+      technologies: ['Next.js', 'TypeScript', 'Supabase', 'Shadcnui', 'API', 'Node.js'],
+      liveUrl: 'https://avt-nine.vercel.app',
+      githubUrl: 'https://github.com/krisdikachi/avt'
+    },
+    {
+      title: 'OJP Technologies website',
+      description: 'A Website for the company I am working at currently',
+      image: '/darkLogo.jpg',
+      technologies: ['Next.js', 'TypeScript', 'Supabase', 'Shadcnui', 'API', 'Node.js'],
+      liveUrl: 'https://ojptechnologies.com',
+      githubUrl: 'https://github.com/krisdikachi/OJP-TECHNOLOGIES'
+    },
+    {
+      title: 'A web based image editor',
+      description: 'A Website for editing simple basic designs',
+      image: '/darkLogo.jpg',
+      technologies: ['Next.js', 'TypeScript', 'Supabase', 'Shadcnui', 'API', 'Node.js'],
+      liveUrl: '@https://kachis-editor.netlify.app/ ',
+      githubUrl: 'https://github.com/krisdikachi/image-editor'
+    },
+    
+    {
+      title: 'A Sexual Purity Landing Page',
+      description: 'A Non-governmental Landing page',
+      image: '/logo.jpg',
+      technologies: ['Django', 'Python', 'Dashboard'],
+      liveUrl: 'https://purity-chi.vercel.app',
+      githubUrl: 'https://github.com/krisdikachi/purity'
     }
   ];
 

@@ -34,22 +34,13 @@ export default function About() {
             className="space-y-6 text-lg text-muted-foreground leading-relaxed"
           >
             <p>
-              I'm a passionate software developer with a love for creating digital experiences 
-              that make a difference. With several years of experience in full-stack development, 
-              I specialize in modern web technologies and always strive to write clean, 
-              efficient code.
+              Hi, I am Nwuko Onyedikachi, a senior software developer with a passion for bringing visions to life through technology. With years of experience in building robust and scalable solutions, I thrive on transforming ideas into impactful digital products.
             </p>
-            
             <p>
-              When I'm not coding, you'll find me exploring new technologies, contributing to 
-              open-source projects, or sharing knowledge with the developer community. I believe 
-              in continuous learning and staying up-to-date with the latest industry trends.
+              As the co founder of Plancer—an innovative online event management web app—I have honed my skills in leading projects from concept to launch. I am deeply committed to helping both small and large scale businesses establish a strong and befitting online presence.
             </p>
-
             <p>
-              My goal is to build software that not only solves problems but also provides 
-              exceptional user experiences. I enjoy collaborating with teams and turning 
-              complex ideas into simple, elegant solutions.
+              I look forward to collaborating with forward thinking organizations and individuals who are ready to elevate their digital footprint. Let us work together to turn your ideas into reality!
             </p>
           </motion.div>
         </motion.div>

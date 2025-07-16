@@ -18,20 +18,20 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'contact@example.com',
-      href: 'mailto:contact@example.com'
+      value: 'andrewnwuko@gmail.com',
+      href: 'mailto:andrenwuko@gmail.com'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
+      value: '+234 (816) 6382563',
+      href: 'tel:+2348166382563'
     },
     {
       icon: MapPin,
-      label: 'Location',
-      value: 'San Francisco, CA',
-      href: 'https://maps.google.com'
+      label: 'Worldwide',
+      value: 'Worldwide',
+      href: 'https://maps.app.goo.gl/DfogZEknUBohi2617'
     }
   ];
 
@@ -150,7 +150,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-card border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-200"
-                      placeholder="your.email@example.com"
+                      placeholder="andrewnwuko@gmail.com"
                     />
                   </motion.div>
                 </div>

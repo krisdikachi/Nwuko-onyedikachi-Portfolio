@@ -12,46 +12,46 @@ export default function Experience() {
   const experiences = [
     {
       type: 'work',
-      title: 'Senior Software Developer',
-      company: 'Tech Innovations Inc.',
+      title: 'Founder',
+      company: 'Plancer Event MGT',
       location: 'San Francisco, CA',
       period: '2022 - Present',
-      description: 'Led development of scalable web applications using React, Node.js, and AWS. Mentored junior developers and implemented CI/CD pipelines.',
+      description: 'Led development of scalable web applications using React, Node.js, Marketting, and AWS. Mentored junior developers and implemented CI/CD pipelines.',
       technologies: ['React', 'Node.js', 'AWS', 'TypeScript', 'PostgreSQL']
     },
     {
       type: 'work',
-      title: 'Full Stack Developer',
-      company: 'Digital Solutions Ltd.',
+      title: 'Frontend Developer',
+      company: 'OJP Technologies Ltd.',
       location: 'Remote',
-      period: '2020 - 2022',
+      period: '2025 - Present',
       description: 'Developed and maintained multiple client projects, focusing on modern web technologies and responsive design.',
       technologies: ['Vue.js', 'Python', 'Django', 'MongoDB', 'Docker']
     },
     {
       type: 'volunteer',
       title: 'Technical Mentor',
-      company: 'Code for Good',
-      location: 'San Francisco, CA',
-      period: '2021 - Present',
+      company: 'Technokraftz Academy',
+      location: 'Remote',
+      period: '2023 - 2023',
       description: 'Volunteer mentor helping underrepresented groups learn programming and break into tech careers.',
       technologies: ['JavaScript', 'React', 'Career Guidance']
     },
     {
       type: 'work',
       title: 'Frontend Developer',
-      company: 'StartupXYZ',
-      location: 'San Francisco, CA',
-      period: '2019 - 2020',
+      company: 'Verbum Network Limited',
+      location: 'Ziks Avenue, Uwani, Enugu',
+      period: '2022 - 2023',
       description: 'Built responsive web applications and collaborated with design teams to create exceptional user experiences.',
-      technologies: ['React', 'Sass', 'JavaScript', 'REST APIs']
+      technologies: ['React','Html','CSS', 'Sass', 'JavaScript', 'REST APIs']
     },
     {
       type: 'volunteer',
       title: 'Open Source Contributor',
       company: 'Various Projects',
       location: 'Remote',
-      period: '2018 - Present',
+      period: '2022 - Present',
       description: 'Active contributor to open source projects, focusing on React components and developer tools.',
       technologies: ['React', 'TypeScript', 'Node.js', 'Documentation']
     }

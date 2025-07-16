@@ -12,12 +12,12 @@ export default function CVDownload() {
   const highlights = [
     {
       icon: Briefcase,
-      title: '5+ Years Experience',
-      description: 'Full-stack development'
+      title: '3+ Years Experience',
+      description: 'Frontend development'
     },
     {
       icon: Award,
-      title: '20+ Projects',
+      title: '15+ Projects',
       description: 'Successfully delivered'
     },
     {
@@ -30,8 +30,8 @@ export default function CVDownload() {
   const handleDownload = () => {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = '/cv.pdf'; // You would place your actual CV file in the public folder
-    link.download = 'Your_Name_CV.pdf';
+    link.href = '/ATL CV.pdf'; // You would place your actual CV file in the public folder
+    link.download = 'ATL_CV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -94,7 +94,7 @@ export default function CVDownload() {
               </motion.button>
               
               <p className="text-sm text-muted-foreground">
-                PDF format • Updated December 2024 • 2 pages
+                PDF format • Updated June 2025 • 2 pages
               </p>
             </motion.div>
           </div>

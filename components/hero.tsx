@@ -6,10 +6,10 @@ import Image from 'next/image';
 
 export default function Hero() {
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:contact@example.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/krisdikachi', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/nwuko-onyedikachi', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://twitter.com/NwukoATL', label: 'Twitter' },
+    { icon: Mail, href: 'mailto:andrewnwuko@gmail.com', label: 'Email' },
   ];
 
   return (
@@ -58,12 +58,12 @@ export default function Hero() {
               className="space-y-4 text-muted-foreground max-w-lg"
             >
               <p>
-                I build innovative solutions, share my journey online, and create 
-                experiences that people love and remember.
+              Hi, I am Nwuko Onyedikachi, a senior software developer with a passion for bringing visions to life through technology. With years of experience in building robust and scalable solutions, I thrive on transforming ideas into impactful digital products.
+As the co founder of Plancer—an innovative online event management web app—I have honed my skills in leading projects from concept to launch.
               </p>
               <p>
-                Currently working on exciting projects and always learning 
-                new technologies to stay ahead of the curve.
+              I am deeply committed to helping both small and large scale businesses establish a strong and befitting online presence.
+              I look forward to collaborating with forward thinking organizations and individuals who are ready to elevate their digital footprint. Let us work together to turn your ideas into reality!
               </p>
             </motion.div>
 
@@ -104,7 +104,7 @@ export default function Hero() {
             >
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-sm border border-border/50">
                 <Image
-                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
+                  src="/ATL.jpg"
                   alt="Profile"
                   width={400}
                   height={400}

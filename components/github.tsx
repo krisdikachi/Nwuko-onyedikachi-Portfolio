@@ -10,30 +10,30 @@ export default function GitHub() {
   const isInView = useInView(ref, { once: true, threshold: 0.3 });
 
   const githubStats = [
-    { label: 'Public Repos', value: '42', icon: Github },
-    { label: 'Total Stars', value: '1.2k', icon: Star },
+    { label: 'Public Repos', value: '34', icon: Github },
+    { label: 'Total Stars', value: '70', icon: Star },
     { label: 'Total Forks', value: '324', icon: GitFork },
-    { label: 'Followers', value: '891', icon: Eye },
+    { label: 'Followers', value: '16', icon: Eye },
   ];
 
   const featuredRepos = [
     {
-      name: 'awesome-react-components',
-      description: 'A curated list of React components and libraries for building modern web applications.',
-      stars: 234,
-      forks: 45,
+      name: 'OJP Technologies',
+      description: 'A Website developed for a tech company',
+      stars: 2,
+      forks: 5,
       language: 'TypeScript'
     },
     {
-      name: 'node-api-boilerplate',
-      description: 'A production-ready Node.js API boilerplate with authentication, validation, and more.',
-      stars: 156,
-      forks: 23,
+      name: 'AVT',
+      description: 'An Ev station finder',
+      stars: 2,
+      forks: 3,
       language: 'JavaScript'
     },
     {
-      name: 'ml-data-pipeline',
-      description: 'Scalable machine learning data pipeline built with Python and Apache Airflow.',
+      name: 'Best Ent Furniture',
+      description: 'A dummt website for a furniture workshop',
       stars: 89,
       forks: 12,
       language: 'Python'
@@ -138,7 +138,7 @@ export default function GitHub() {
             className="text-center"
           >
             <motion.a
-              href="https://github.com/yourusername"
+              href="https://github.com/krisdikachi"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}

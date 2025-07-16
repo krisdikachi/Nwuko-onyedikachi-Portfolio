@@ -69,7 +69,7 @@ export default function Navbar() {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ${
+        className={`fixed top-4  transform -translate-x-1/2 z-50 transition-all duration-300 ${
           isScrolled 
             ? 'bg-background/80 backdrop-blur-md border border-border/50 shadow-lg' 
             : 'bg-transparent'
@@ -81,7 +81,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             className="text-lg sm:text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent flex-shrink-0"
           >
-            Portfolio
+            DIKACHI
           </motion.div>
 
           {/* Desktop Navigation - Hidden on mobile */}
