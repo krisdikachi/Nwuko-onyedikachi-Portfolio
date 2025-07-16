@@ -7,7 +7,7 @@ import { Github, Star, GitFork, Eye } from 'lucide-react';
 
 export default function GitHub() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.3 });
+  const isInView = useInView(ref, { once: true });
 
   const githubStats = [
     { label: 'Public Repos', value: '34', icon: Github },

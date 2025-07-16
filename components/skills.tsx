@@ -25,7 +25,7 @@ import {
 
 export default function Skills() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.3 });
+  const isInView = useInView(ref, { once: true });
 
   const skillCategories = [
     {

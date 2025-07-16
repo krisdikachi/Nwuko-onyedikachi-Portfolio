@@ -7,7 +7,7 @@ import { Briefcase, Calendar, MapPin, Heart } from 'lucide-react';
 
 export default function Experience() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.3 });
+  const isInView = useInView(ref, { once: true });
 
   const experiences = [
     {

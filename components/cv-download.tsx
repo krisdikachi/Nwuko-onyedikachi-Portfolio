@@ -7,7 +7,7 @@ import { Download, FileText, Award, Briefcase } from 'lucide-react';
 
 export default function CVDownload() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.3 });
+  const isInView = useInView(ref, { once: true });
 
   const highlights = [
     {
