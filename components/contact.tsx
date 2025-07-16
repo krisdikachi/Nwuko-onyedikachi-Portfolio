@@ -7,7 +7,7 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 export default function Contact() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.3 });
+  const isInView = useInView(ref, { once: true });
   const [formData, setFormData] = useState({
     name: '',
     email: '',
