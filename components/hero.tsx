@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 import Image from 'next/image';
-import Particles from 'react-tsparticles';
+import { Particles } from '@tsparticles/react';
 import { loadFull } from 'tsparticles';
 
 export default function Hero() {
@@ -17,24 +17,26 @@ export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden">
       {/* Floating Particles Background */}
-      <Particles
-        id="tsparticles-hero"
-        className="absolute inset-0 z-0"
-        init={async (engine) => { await loadFull(engine); }}
-        options={{
-          fullScreen: false,
-          background: { color: 'transparent' },
-          particles: {
-            number: { value: 40, density: { enable: true, value_area: 800 } },
-            color: { value: '#a3a3a3' },
-            opacity: { value: 0.2 },
-            size: { value: 3, random: true },
-            move: { enable: true, speed: 0.5, direction: 'none', outModes: 'out' },
-            links: { enable: false },
-          },
-          detectRetina: true,
-        }}
-      />
+      {/* Floating Particles Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Particles
+          id="tsparticles-hero"
+          init={async (engine: any) => { await loadFull(engine); }}
+          options={{
+            fullScreen: false,
+            background: { color: 'transparent' },
+            particles: {
+              number: { value: 40, density: { enable: true, value_area: 800 } },
+              color: { value: '#a3a3a3' },
+              opacity: { value: 0.2 },
+              size: { value: 3, random: true },
+              move: { enable: true, speed: 0.5, direction: 'none', outModes: 'out' },
+              links: { enable: false },
+            },
+            detectRetina: true,
+          }}
+        />
+      </div>
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <motion.div

@@ -20,7 +20,7 @@ export default function Projects() {
       githubUrl: 'https://github.com/krisdikachi/bhs24hub'
     },
     {
-      title: 'Web Management WebApp',
+      title: 'Event Management | Digital Ticket WebApp',
       description: 'An Event management site used t create, manage and even share digital tickets used for checking in ',
       image: '/planceer2.png',
       technologies: ['Next.js', 'TypeScript', 'Supabase', 'Shadcnui', 'API', 'Node.js'],
