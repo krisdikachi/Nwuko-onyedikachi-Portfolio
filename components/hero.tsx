@@ -26,10 +26,10 @@ export default function Hero() {
             fullScreen: false,
             background: { color: 'transparent' },
             particles: {
-              number: { value: 40, density: { enable: true, value_area: 800 } },
+              number: { value: 40, density: { enable: true, area: 800 } },
               color: { value: '#a3a3a3' },
               opacity: { value: 0.2 },
-              size: { value: 3, random: true },
+              size: { value: { min: 1, max: 3 } },
               move: { enable: true, speed: 0.5, direction: 'none', outModes: 'out' },
               links: { enable: false },
             },
