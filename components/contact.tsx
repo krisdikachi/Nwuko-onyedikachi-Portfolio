@@ -5,7 +5,7 @@ import { useRef, useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { FaWhatsapp } from 'react-icons/fa';
-import emailjs from 'emailjs-com';
+
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './ui/accordion';
 
 export const dynamic = "force-dynamic";
