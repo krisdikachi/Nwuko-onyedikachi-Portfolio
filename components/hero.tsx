@@ -21,7 +21,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Particles
           id="tsparticles-hero"
-          init={async (engine: any) => { await loadFull(engine); }}
+          load={async (engine: any) => { await loadFull(engine); }}
           options={{
             fullScreen: false,
             background: { color: 'transparent' },
