@@ -46,7 +46,7 @@ export default function Projects() {
     {
       title: 'A web based image editor',
       description: 'A Website for editing simple basic designs',
-      image: '/darkLogo.jpg',
+      image: '/editor.png',
       technologies: ['Next.js', 'TypeScript', 'Supabase', 'Shadcnui', 'API', 'Node.js'],
       liveUrl: '@https://kachis-editor.netlify.app/ ',
       githubUrl: 'https://github.com/krisdikachi/image-editor'

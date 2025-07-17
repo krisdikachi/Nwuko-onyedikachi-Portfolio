@@ -104,7 +104,7 @@ As the co founder of Plancer—an innovative online event management web app—I
               >
                 <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-sm border border-border/50">
                 <Image
-                  src="/ATL.jpg"
+                  src="/me.png"
                   alt="Nwuko Onyedikachi - Senior Software Developer"
                   width={400}
                   height={400}
