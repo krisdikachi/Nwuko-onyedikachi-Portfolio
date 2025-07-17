@@ -40,7 +40,7 @@ export default function Projects() {
       description: 'A Website for the company I am working at currently',
       image: '/darkLogo.jpg',
       technologies: ['Next.js', 'TypeScript', 'Supabase', 'Shadcnui', 'API', 'Node.js'],
-      liveUrl: 'https://ojptechnologies.com',
+      liveUrl: 'https://ojptechnologiesltd.com',
       githubUrl: 'https://github.com/krisdikachi/OJP-TECHNOLOGIES'
     },
     {
