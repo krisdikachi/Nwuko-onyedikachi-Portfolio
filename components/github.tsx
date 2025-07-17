@@ -4,10 +4,37 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Github, Star, GitFork, Eye } from 'lucide-react';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from './ui/dialog';
+import { useState } from 'react';
+
+type FeaturedRepo = {
+  name: string;
+  description: string;
+  stars: number;
+  forks: number;
+  language: string;
+  github: string;
+};
+
+type GithubEvent = {
+  id: string;
+  type: string;
+  actor?: { login: string };
+  created_at: string;
+  payload?: {
+    commits?: { message: string }[];
+  };
+};
 
 export default function GitHub() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedRepo, setSelectedRepo] = useState<FeaturedRepo | null>(null);
+  const [activity, setActivity] = useState<GithubEvent[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const githubStats = [
     { label: 'Public Repos', value: '34', icon: Github },
@@ -22,23 +49,47 @@ export default function GitHub() {
       description: 'A Website developed for a tech company',
       stars: 2,
       forks: 5,
-      language: 'TypeScript'
+      language: 'TypeScript',
+      github: 'OJP-Technologies',
     },
     {
       name: 'AVT',
       description: 'An Ev station finder',
       stars: 2,
       forks: 3,
-      language: 'JavaScript'
+      language: 'JavaScript',
+      github: 'AVT',
     },
     {
       name: 'Best Ent Furniture',
       description: 'A dummt website for a furniture workshop',
       stars: 89,
       forks: 12,
-      language: 'Python'
+      language: 'Python',
+      github: 'Best-Ent-Furniture',
     }
   ];
+
+  const handleRepoClick = async (repo: FeaturedRepo) => {
+    setSelectedRepo(repo);
+    setModalOpen(true);
+    setLoading(true);
+    setError('');
+    setActivity([]);
+    try {
+      // Replace with your actual GitHub username and repo name mapping
+      const owner = 'krisdikachi';
+      const repoName = repo.github;
+      const res = await fetch(`https://api.github.com/repos/${owner}/${repoName}/events`);
+      if (!res.ok) throw new Error('Failed to fetch activity');
+      const data = await res.json();
+      setActivity(data);
+    } catch (err) {
+      setError('Could not fetch activity.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section id="github" className="py-20 px-4 bg-secondary/20">
@@ -101,6 +152,7 @@ export default function GitHub() {
                   transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                   whileHover={{ y: -3 }}
                   className="bg-card rounded-2xl p-6 border border-border/50 hover:shadow-lg transition-all duration-300 cursor-pointer group"
+                  onClick={() => handleRepoClick(repo)}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <h4 className="font-semibold text-primary group-hover:text-accent transition-colors duration-200">
@@ -150,6 +202,38 @@ export default function GitHub() {
             </motion.a>
           </motion.div>
         </motion.div>
+        <Dialog open={modalOpen} onOpenChange={setModalOpen}>
+          <DialogContent>
+            <DialogTitle>
+              {selectedRepo ? selectedRepo.name : 'Repository Activity'}
+            </DialogTitle>
+            <DialogDescription>
+              {selectedRepo ? selectedRepo.description : ''}
+            </DialogDescription>
+            {loading && <div className="py-4 text-center">Loading activity...</div>}
+            {error && <div className="py-4 text-red-500 text-center">{error}</div>}
+            {!loading && !error && activity && activity.length > 0 && (
+              <ul className="max-h-60 overflow-y-auto mt-4 space-y-2">
+                {activity.slice(0, 10).map((event, idx) => (
+                  <li key={event.id || idx} className="border-b pb-2">
+                    <div className="font-medium">{event.type.replace(/Event$/, '')}</div>
+                    <div className="text-xs text-muted-foreground">
+                      {event.actor?.login} &middot; {new Date(event.created_at).toLocaleString()}
+                    </div>
+                    {event.payload?.commits && event.payload.commits.length > 0 && (
+                      <div className="text-xs mt-1">
+                        Commits: {event.payload.commits.map(c => c.message).join(', ')}
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+            {!loading && !error && activity && activity.length === 0 && (
+              <div className="py-4 text-center text-muted-foreground">No recent activity found.</div>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );

@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 import Image from 'next/image';
+import Particles from 'react-tsparticles';
+import { loadFull } from 'tsparticles';
 
 export default function Hero() {
   const socialLinks = [
@@ -13,8 +15,27 @@ export default function Hero() {
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
-      <div className="container mx-auto max-w-6xl">
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden">
+      {/* Floating Particles Background */}
+      <Particles
+        id="tsparticles-hero"
+        className="absolute inset-0 z-0"
+        init={async (engine) => { await loadFull(engine); }}
+        options={{
+          fullScreen: false,
+          background: { color: 'transparent' },
+          particles: {
+            number: { value: 40, density: { enable: true, value_area: 800 } },
+            color: { value: '#a3a3a3' },
+            opacity: { value: 0.2 },
+            size: { value: 3, random: true },
+            move: { enable: true, speed: 0.5, direction: 'none', outModes: 'out' },
+            links: { enable: false },
+          },
+          detectRetina: true,
+        }}
+      />
+      <div className="container mx-auto max-w-6xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -99,32 +120,32 @@ As the co founder of Plancer—an innovative online event management web app—I
               className="flex justify-center lg:justify-end"
             >
               <motion.div
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ rotate: [0, -15, 15, -10, 10, 0], transition: { duration: 0.8 } }}
                 className="relative"
               >
                 <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-sm border border-border/50">
-                <Image
-                  src="/me.png"
-                  alt="Nwuko Onyedikachi - Senior Software Developer"
-                  width={400}
-                  height={400}
-                  className="w-full h-full object-cover transition-all duration-500"
+                  <Image
+                    src="/me2.png"
+                    alt="Nwuko Onyedikachi - Senior Software Developer"
+                    width={400}
+                    height={400}
+                    className="w-full h-full object-cover transition-all duration-500"
+                  />
+                </div>
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    opacity: [0.5, 0.8, 0.5] 
+                  }}
+                  transition={{ 
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut" 
+                  }}
+                  className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-lg -z-10"
                 />
-              </div>
-              <motion.div
-                animate={{ 
-                  scale: [1, 1.1, 1],
-                  opacity: [0.5, 0.8, 0.5] 
-                }}
-                transition={{ 
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut" 
-                }}
-                className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-lg -z-10"
-              />
+              </motion.div>
             </motion.div>
-          </motion.div>
         </div>
       </div>
     </section>

@@ -1,9 +1,15 @@
-'use client';
 
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import { FaWhatsapp } from 'react-icons/fa';
+
+export const dynamic = "force-dynamic";
+import { NextRequest, NextResponse } from 'next/server';
+import Database from 'better-sqlite3';
+import path from 'path';
 
 export default function Contact() {
   const ref = useRef(null);
@@ -13,6 +19,9 @@ export default function Contact() {
     email: '',
     message: ''
   });
+  const [submitting, setSubmitting] = useState(false);
+  const [inlineMessage, setInlineMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const { toast } = useToast();
 
   const contactInfo = [
     {
@@ -35,12 +44,31 @@ export default function Contact() {
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    setSubmitting(true);
+    setInlineMessage(null);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        toast({ title: 'Message sent!', description: 'Your message has been received.' });
+        setInlineMessage({ type: 'success', text: 'Your message has been sent successfully!' });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        toast({ title: 'Error', description: data.error || 'Failed to send message.', variant: 'destructive' });
+        setInlineMessage({ type: 'error', text: data.error || 'Failed to send message.' });
+      }
+    } catch (err) {
+      toast({ title: 'Error', description: 'Failed to send message.', variant: 'destructive' });
+      setInlineMessage({ type: 'error', text: 'Failed to send message.' });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -175,6 +203,11 @@ export default function Contact() {
                   />
                 </motion.div>
 
+                {inlineMessage && (
+                  <div className={`text-center text-sm font-medium rounded-lg py-2 px-4 mb-2 ${inlineMessage.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                    {inlineMessage.text}
+                  </div>
+                )}
                 <motion.button
                   type="submit"
                   initial={{ opacity: 0, y: 20 }}
@@ -182,11 +215,22 @@ export default function Contact() {
                   transition={{ duration: 0.6, delay: 0.8 }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full flex items-center justify-center space-x-2 bg-primary text-primary-foreground px-6 py-4 rounded-xl font-medium hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="w-full flex items-center justify-center space-x-2 bg-primary text-primary-foreground px-6 py-4 rounded-xl font-medium hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-60"
+                  disabled={submitting}
                 >
                   <Send className="w-5 h-5" />
-                  <span>Send Message</span>
+                  <span>{submitting ? 'Sending...' : 'Send Message'}</span>
                 </motion.button>
+                <a
+                  href="https://wa.me/2348101451936"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 w-full flex items-center justify-center space-x-2 bg-green-500 text-white px-6 py-4 rounded-xl font-medium hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <FaWhatsapp className="w-5 h-5" />
+                  <span>Contact Me on WhatsApp</span>
+                </a>
               </form>
             </motion.div>
           </div>

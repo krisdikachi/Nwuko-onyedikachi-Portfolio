@@ -40,14 +40,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://nwuko-onyedikachi-portfolio.vercel.app'),
+  metadataBase: new URL('https://nwuko-onyedikachi.vercel.app'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://nwuko-onyedikachi-portfolio.vercel.app',
+    url: 'https://nwuko-onyedikachi.vercel.app',
     title: 'Nwuko Onyedikachi - Senior Software Developer & Co-founder of Plancer',
     description: 'Nwuko Onyedikachi is a senior software developer and co-founder of Plancer, an innovative online event management web app. Expert in React, Node.js, AWS, and full-stack development.',
     siteName: 'Nwuko Onyedikachi Portfolio',
@@ -170,7 +170,7 @@ export default function RootLayout({
         
         {/* Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+          src="https://www.googletagmanager.com/gtag/js?id=G-SEJ1XEVPLJ"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -178,7 +178,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'GA_MEASUREMENT_ID');
+            gtag('config', 'GA_ENT_ID');
           `}
         </Script>
       </body>

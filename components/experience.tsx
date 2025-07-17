@@ -15,7 +15,7 @@ export default function Experience() {
       title: 'Founder',
       company: 'Plancer Event MGT',
       location: 'Remote',
-      period: '2022 - Present',
+      period: '2025 - Present',
       description: 'Led development of scalable web applications using React, Node.js, Marketting, and AWS. Mentored junior developers and implemented CI/CD pipelines.',
       technologies: ['React', 'Node.js', 'AWS', 'TypeScript', 'PostgreSQL']
     },
