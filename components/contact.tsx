@@ -9,9 +9,8 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './ui/accordion';
 
 export const dynamic = "force-dynamic";
-import { NextRequest, NextResponse } from 'next/server';
-import Database from 'better-sqlite3';
-import path from 'path';
+
+
 
 export default function Contact() {
   const ref = useRef(null);
