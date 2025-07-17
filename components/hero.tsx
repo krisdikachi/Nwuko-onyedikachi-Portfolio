@@ -13,9 +13,9 @@ export default function Hero() {
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-20">
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -35,10 +35,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-6xl lg:text-7xl font-bold leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
             >
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                Your Name
+                Nwuko Onyedikachi
               </span>
             </motion.h1>
 
@@ -46,9 +46,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-2xl lg:text-3xl text-muted-foreground font-medium"
+              className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground font-medium"
             >
-              Software Developer
+              Senior Software Developer
             </motion.h2>
 
             <motion.div
@@ -92,23 +92,23 @@ As the co founder of Plancer—an innovative online event management web app—I
             </motion.div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex justify-center lg:justify-end"
-          >
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="relative"
+                      <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex justify-center lg:justify-end"
             >
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-sm border border-border/50">
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="relative"
+              >
+                <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-sm border border-border/50">
                 <Image
                   src="/ATL.jpg"
-                  alt="Profile"
+                  alt="Nwuko Onyedikachi - Senior Software Developer"
                   width={400}
                   height={400}
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover transition-all duration-500"
                 />
               </div>
               <motion.div

@@ -63,7 +63,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 relative overflow-hidden">
+    <section id="projects" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Enhanced Background Neon Effect */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>

@@ -51,7 +51,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 bg-secondary/20">
+    <section id="contact" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-secondary/20">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           ref={ref}
@@ -66,10 +66,10 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-center space-y-4"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold">Let's Work Together</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">Let us Work Together</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind? I'd love to hear about it. Send me a message 
-              and let's discuss how we can bring your ideas to life.
+              Have a project in mind? I would love to hear about it. Send me a message 
+              and let us discuss how we can bring your ideas to life.
             </p>
           </motion.div>
 

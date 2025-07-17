@@ -69,17 +69,17 @@ export default function Navbar() {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-4  transform -translate-x-1/2 z-50 transition-all duration-300 ${
+        className={`fixed top-2 sm:top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ${
           isScrolled 
             ? 'bg-background/80 backdrop-blur-md border border-border/50 shadow-lg' 
             : 'bg-transparent'
-        } rounded-full px-3 sm:px-4 md:px-6 py-3 w-[90%] sm:w-[85%] md:w-[80%] lg:w-[75%] max-w-4xl mx-auto`}
+        } rounded-full px-2 sm:px-3 md:px-4 lg:px-6 py-2 sm:py-3 w-[95%] sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] max-w-4xl mx-auto`}
       >
         <div className="flex items-center justify-between w-full">
           {/* Logo - Always visible */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-lg sm:text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent flex-shrink-0"
+            className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent flex-shrink-0"
           >
             DIKACHI
           </motion.div>
@@ -103,18 +103,7 @@ export default function Navbar() {
                 </motion.button>
               ))}
 
-              <motion.button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-2 rounded-full bg-secondary hover:bg-accent transition-colors duration-200"
-              >
-                {isMobileMenuOpen ? (
-                  <X className="w-4 h-4" />
-                ) : (
-                  <Menu className="w-4 h-4" />
-                )}
-              </motion.button>
+
 
             </div>
           </div>

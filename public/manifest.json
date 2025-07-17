@@ -1,0 +1,27 @@
+{
+  "name": "Nwuko Onyedikachi - Senior Software Developer",
+  "short_name": "Nwuko Portfolio",
+  "description": "Nwuko Onyedikachi is a senior software developer and co-founder of Plancer, an innovative online event management web app.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["business", "productivity", "technology"],
+  "lang": "en",
+  "dir": "ltr"
+} 

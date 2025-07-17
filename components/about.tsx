@@ -9,7 +9,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section id="about" className="py-20 px-4">
+    <section id="about" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-4xl">
         <motion.div
           ref={ref}
@@ -22,7 +22,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl lg:text-5xl font-bold"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold"
           >
             About Me
           </motion.h2>
@@ -31,7 +31,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-6 text-lg text-muted-foreground leading-relaxed"
+            className="space-y-6 text-base sm:text-lg text-muted-foreground leading-relaxed"
           >
             <p>
               Hi, I am Nwuko Onyedikachi, a senior software developer with a passion for bringing visions to life through technology. With years of experience in building robust and scalable solutions, I thrive on transforming ideas into impactful digital products.
