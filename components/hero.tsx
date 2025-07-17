@@ -26,7 +26,7 @@ export default function Hero() {
             fullScreen: false,
             background: { color: 'transparent' },
             particles: {
-              number: { value: 40, density: { enable: true, area: 800 } },
+              number: { value: 40, density: { enable: true, width: 800 } },
               color: { value: '#a3a3a3' },
               opacity: { value: 0.2 },
               size: { value: { min: 1, max: 3 } },
