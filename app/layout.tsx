@@ -5,14 +5,15 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Analytics } from "@vercel/analytics/next"
 import Script from 'next/script';
 
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Nwuko Onyedikachi - Senior Software Developer & Co-founder of Plancer',
   description: 'Nwuko Onyedikachi is a senior software developer and co-founder of Plancer, an innovative online event management web app. Expert in React, Node.js, AWS, and full-stack development. Based in Nigeria, serving clients worldwide.',
   keywords: [
-    'Nwuko Onyedikachi',
-    'AndroTechList',
+    'Nwuko Onyedikachi  web developer',
+    'AndroTechList group web developer',
     'Nigerian web developer',
     'best Nigerian web developer',
     'software developer Nigeria',
@@ -96,6 +97,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="google-site-verification" content="dHaAeJ2A-CX0-nFNn2A6sXjX9TGiPNEpkHAb4K_aKDM" />
         
         {/* Structured Data */}
         <script
