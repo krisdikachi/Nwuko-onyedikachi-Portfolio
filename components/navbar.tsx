@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Moon, Sun, Palette, Menu, X } from 'lucide-react';
 import { useTheme } from './theme-provider';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -64,6 +65,20 @@ export default function Navbar() {
     setTheme(themes[nextIndex]);
   };
 
+  const getLogoSrc = (theme: string) => {
+  switch (theme) {
+    case 'light':
+      return '/androtechlist-logo-navy.png';
+    case 'navy':
+      return '/androtechlist-logo-white.png';
+    case 'dark':
+      return '/androtechlist-logo-white.png';
+    // Add more cases if you use other themes
+    default:
+      return '/androtechlist-logo-navy.png';
+  }
+};
+
   return (
     <>
       <motion.nav
@@ -79,9 +94,16 @@ export default function Navbar() {
           {/* Logo - Always visible */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent flex-shrink-0"
+            className="flex-shrink-0"
           >
-            ATL
+            <Image
+              src={getLogoSrc(theme)}
+              alt="AndroTechList Logo"
+              width={150}
+              height={40}
+              className="select-none pointer-events-none"
+
+            />
           </motion.div>
 
           {/* Desktop Navigation - Hidden on mobile */}

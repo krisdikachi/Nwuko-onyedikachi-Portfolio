@@ -34,7 +34,7 @@ export default function About() {
             className="space-y-6 text-base sm:text-lg text-muted-foreground leading-relaxed"
           >
             <p>
-              Hi, I am Nwuko Onyedikachi, a senior software developer with a passion for bringing visions to life through technology. With years of experience in building robust and scalable solutions, I thrive on transforming ideas into impactful digital products.
+              Hi, I am Nwuko Onyedikachi, a Senior Front-end Developer (Heavy) with a passion for bringing visions to life through technology. With years of experience in building robust and scalable solutions, I thrive on transforming ideas into impactful digital products.
             </p>
             <p>
               As the co founder of Plancer—an innovative online event management web app—I have honed my skills in leading projects from concept to launch. I am deeply committed to helping both small and large scale businesses establish a strong and befitting online presence.

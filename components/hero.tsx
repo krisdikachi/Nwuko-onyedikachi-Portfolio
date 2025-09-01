@@ -70,7 +70,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground font-medium"
             >
-              Senior Software Developer
+              Senior Front-end Developer (Heavy)
             </motion.h2>
 
             <motion.div
@@ -80,7 +80,8 @@ export default function Hero() {
               className="space-y-4 text-muted-foreground max-w-lg"
             >
               <p>
-              Hi, I am Nwuko Onyedikachi, a senior software developer with a passion for bringing visions to life through technology. With years of experience in building robust and scalable solutions, I thrive on transforming ideas into impactful digital products.
+              Hi, I am Nwuko Onyedikachi, a Senior Front-end Developer (Heavy)
+ with a passion for bringing visions to life through technology. With years of experience in building robust and scalable solutions, I thrive on transforming ideas into impactful digital products.
 As the co founder of Plancer—an innovative online event management web app—I have honed my skills in leading projects from concept to launch.
               </p>
               <p>
@@ -127,7 +128,8 @@ As the co founder of Plancer—an innovative online event management web app—I
                 <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 backdrop-blur-sm border border-border/50">
                   <Image
                     src="/myimage.jpg"
-                    alt="Nwuko Onyedikachi - Senior Software Developer"
+                    alt="Nwuko Onyedikachi - Senior Front-end Developer (Heavy)
+"
                     width={400}
                     height={400}
                     className="w-full h-full object-cover transition-all duration-500"
